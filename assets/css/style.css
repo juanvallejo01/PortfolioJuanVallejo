@@ -334,6 +334,13 @@ main {
 .avatar-box {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
+  border: 1px solid var(--orange-yellow-crayola);
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(255, 209, 72, 0.15);
+}
+
+.avatar-box img {
+  border-radius: inherit;
 }
 
 .info-content .name {
@@ -505,6 +512,43 @@ main {
 }
 
 .about-text p { margin-bottom: 15px; }
+
+.btn-resume {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  text-transform: capitalize;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
+  transition: var(--transition-1);
+  margin-top: 5px;
+}
+
+.btn-resume::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.btn-resume ion-icon { font-size: 18px; }
+
+.btn-resume:hover,
+.btn-resume:focus { background: var(--bg-gradient-yellow-1); color: var(--eerie-black-1); }
+
+.btn-resume:hover::before,
+.btn-resume:focus::before { background: var(--bg-gradient-yellow-2); }
 
 
 
@@ -837,6 +881,19 @@ main {
 .skills-title { margin-bottom: 20px; }
 
 .skills-list { padding: 20px; }
+
+.soft-skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.soft-skills-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
 
 .skills-item:not(:last-child) { margin-bottom: 15px; }
