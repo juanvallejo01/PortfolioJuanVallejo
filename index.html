@@ -33,6 +33,11 @@
 <body>
 
   <!--
+    - warp background
+  -->
+  <canvas id="warp-canvas"></canvas>
+
+  <!--
     - #MAIN
   -->
 
@@ -191,11 +196,11 @@
             <button class="navbar-link" data-nav-link>Certificates</button>
           </li>
 
-          <!--
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link>Videos</button>
           </li>
-  
+
+          <!--
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
           </li> -->
@@ -912,6 +917,89 @@
 
 
 
+      <!--
+        - #VIDEOS
+      -->
+
+      <article class="videos" data-page="videos">
+
+        <header>
+          <h2 class="h2 article-title">Presentaciones y Videos</h2>
+        </header>
+
+        <section class="videos-section">
+
+          <div class="videos-toolbar">
+            <p class="videos-empty-msg" data-videos-empty style="display: none;">Aún no hay videos publicados.</p>
+
+            <button class="videos-lock-btn" data-videos-lock-btn type="button" aria-label="Administrar videos" title="Administrar videos">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="video-list" data-video-list></ul>
+
+          <form class="video-add-form" data-video-add-form style="display: none;">
+
+            <h3 class="h4 form-title">Agregar video</h3>
+
+            <div class="input-wrapper">
+              <input type="text" name="title" class="form-input" placeholder="Título" required maxlength="200" data-video-title-input>
+              <input type="url" name="url" class="form-input" placeholder="Link de YouTube o Vimeo" required data-video-url-input>
+            </div>
+
+            <button class="form-btn" type="submit">
+              <ion-icon name="add-outline"></ion-icon>
+              <span>Agregar video</span>
+            </button>
+
+            <p class="video-form-msg" data-video-form-msg></p>
+
+          </form>
+
+        </section>
+
+        <!--
+          - videos password modal
+        -->
+
+        <div class="modal-container" data-videos-modal-container>
+
+          <div class="overlay" data-videos-overlay></div>
+
+          <section class="videos-modal">
+
+            <button class="modal-close-btn" data-videos-modal-close-btn type="button">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <h3 class="h3 modal-title">Acceso administrador</h3>
+
+            <p class="videos-modal-text">Ingresa la contraseña para agregar o eliminar videos.</p>
+
+            <form data-videos-password-form>
+
+              <div class="input-wrapper" style="margin-bottom: 15px;">
+                <input type="password" class="form-input" placeholder="Contraseña" required autocomplete="current-password" data-videos-password-input>
+              </div>
+
+              <button class="form-btn" type="submit">
+                <ion-icon name="lock-open-outline"></ion-icon>
+                <span>Desbloquear</span>
+              </button>
+
+              <p class="videos-modal-error" data-videos-modal-error></p>
+
+            </form>
+
+          </section>
+
+        </div>
+
+      </article>
+
+
+
 
       <!--
         - #BLOG
@@ -1162,6 +1250,8 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/warp.js"></script>
+  <script src="./assets/js/videos.js"></script>
 
   <!--
     - ionicon link
