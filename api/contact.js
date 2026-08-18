@@ -9,6 +9,75 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+function formatReceivedAt() {
+  return new Intl.DateTimeFormat('es-CO', {
+    dateStyle: 'full',
+    timeStyle: 'short',
+    timeZone: 'America/Bogota',
+  }).format(new Date());
+}
+
+function buildEmailHtml({ name, email, message }) {
+  const safeName = escapeHtml(name);
+  const safeEmail = escapeHtml(email);
+  const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
+  const firstName = escapeHtml(name.split(' ')[0]);
+
+  return `<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuevo mensaje de contacto</title>
+</head>
+<body style="margin:0;">
+  <div style="background:#f4f4f5;padding:32px 16px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;">
+    <div style="max-width:560px;margin:0 auto;background:#121212;border-radius:16px;overflow:hidden;border:1px solid #2a2a2a;">
+      <div style="background:#0a0a0a;padding:28px 32px;border-bottom:3px solid #ffd166;">
+        <p style="margin:0 0 6px;color:#ffd166;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:700;">Portfolio &middot; Nuevo contacto</p>
+        <h1 style="margin:0;color:#ffffff;font-size:22px;line-height:1.3;">Tienes un nuevo mensaje de ${safeName}</h1>
+      </div>
+      <div style="padding:28px 32px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin-bottom:24px;">
+          <tr>
+            <td style="padding:8px 0;color:#9a9a9a;font-size:13px;width:90px;vertical-align:top;">Nombre</td>
+            <td style="padding:8px 0;color:#ffffff;font-size:15px;font-weight:600;">${safeName}</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;color:#9a9a9a;font-size:13px;vertical-align:top;">Email</td>
+            <td style="padding:8px 0;"><a href="mailto:${safeEmail}" style="color:#ffd166;font-size:15px;text-decoration:none;">${safeEmail}</a></td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;color:#9a9a9a;font-size:13px;vertical-align:top;">Fecha</td>
+            <td style="padding:8px 0;color:#ffffff;font-size:15px;">${escapeHtml(formatReceivedAt())}</td>
+          </tr>
+        </table>
+        <div style="background:#1c1c1c;border-left:3px solid #ffd166;border-radius:8px;padding:18px 20px;">
+          <p style="margin:0 0 8px;color:#9a9a9a;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;">Mensaje</p>
+          <p style="margin:0;color:#e8e8e8;font-size:15px;line-height:1.6;">${safeMessage}</p>
+        </div>
+        <a href="mailto:${safeEmail}" style="display:inline-block;margin-top:24px;background:#ffd166;color:#0a0a0a;text-decoration:none;font-weight:700;font-size:14px;padding:12px 24px;border-radius:10px;">Responder a ${firstName}</a>
+      </div>
+      <div style="padding:16px 32px;border-top:1px solid #2a2a2a;">
+        <p style="margin:0;color:#6a6a6a;font-size:12px;">Enviado desde el formulario de contacto de tu portfolio.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>`;
+}
+
+function buildEmailText({ name, email, message }) {
+  return [
+    `Nuevo mensaje de ${name} (${email})`,
+    `Fecha: ${formatReceivedAt()}`,
+    '',
+    message,
+    '',
+    `Responder: mailto:${email}`,
+  ].join('\n');
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -63,10 +132,8 @@ module.exports = async function handler(req, res) {
         to: [CONTACT_EMAIL],
         reply_to: cleanEmail,
         subject: `Nuevo mensaje de ${cleanName} (portfolio)`,
-        html:
-          `<p><strong>Nombre:</strong> ${escapeHtml(cleanName)}</p>` +
-          `<p><strong>Email:</strong> ${escapeHtml(cleanEmail)}</p>` +
-          `<p><strong>Mensaje:</strong></p><p>${escapeHtml(cleanMessage).replace(/\n/g, '<br>')}</p>`,
+        html: buildEmailHtml({ name: cleanName, email: cleanEmail, message: cleanMessage }),
+        text: buildEmailText({ name: cleanName, email: cleanEmail, message: cleanMessage }),
       }),
     });
 

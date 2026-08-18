@@ -1428,6 +1428,94 @@ input[type="file"].form-input {
 
 .contact-form-msg.success { color: var(--orange-yellow-crayola); }
 
+.contact-success {
+  text-align: center;
+  padding: 20px 10px;
+  animation: contactSuccessIn 0.4s ease forwards;
+}
+
+@keyframes contactSuccessIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.contact-success-icon {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: var(--bg-gradient-onyx);
+  border: 1px solid var(--orange-yellow-crayola);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange-yellow-crayola);
+  font-size: 30px;
+  box-shadow: 0 4px 20px rgba(255, 209, 72, 0.25);
+}
+
+.contact-success-title {
+  color: var(--white-2);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-500);
+  margin-bottom: 10px;
+}
+
+.contact-success-text {
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.contact-success-text strong { color: var(--white-2); font-weight: var(--fw-500); }
+
+.contact-success-summary {
+  text-align: left;
+  background: var(--eerie-black-1);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin: 20px auto 0;
+  max-width: 420px;
+}
+
+.contact-success-summary div + div { margin-top: 10px; }
+
+.contact-success-summary dt {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-success-summary dd {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  margin-top: 2px;
+  overflow-wrap: break-word;
+}
+
+.contact-success-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 22px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  color: var(--light-gray-70);
+  font-size: var(--fs-6);
+  transition: var(--transition-1);
+}
+
+.contact-success-btn:hover {
+  color: var(--orange-yellow-crayola);
+  border-color: var(--orange-yellow-crayola);
+}
+
 .input-wrapper {
   display: grid;
   grid-template-columns: 1fr;
