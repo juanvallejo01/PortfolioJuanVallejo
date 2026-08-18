@@ -1218,8 +1218,7 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ8bNLzPCmMI4RaGGuUum1Dx8&key=AIzaSyDHMc39zngZBx2OMrpdiVTmKOe66IuDM7A"
-              
+              src="https://www.google.com/maps?q=Santiago+de+Cali,+Valle+del+Cauca,+Colombia&output=embed"
               width="400" height="300" loading="lazy"></iframe>
           </figure>
         </section>
@@ -1228,7 +1227,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="#" class="form" data-form>
+          <form class="form" data-form novalidate>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -1238,10 +1237,15 @@
 
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
 
+            <!-- honeypot: hidden from real visitors, bots tend to fill every field -->
+            <input type="text" name="website" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
+              <span data-form-btn-label>Send Message</span>
             </button>
+
+            <p class="contact-form-msg" data-contact-form-msg></p>
 
           </form>
 
@@ -1263,6 +1267,7 @@
   -->
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/warp.js"></script>
+  <script src="./assets/js/contact.js"></script>
   <script type="module" src="./assets/js/videos.js"></script>
 
   <!--

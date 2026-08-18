@@ -1409,6 +1409,25 @@ input[type="file"].form-input {
 
 .form-title { margin-bottom: 20px; }
 
+.contact-honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact-form-msg {
+  font-size: var(--fs-7);
+  margin-top: 15px;
+  min-height: 1em;
+}
+
+.contact-form-msg.error { color: var(--bittersweet-shimmer); }
+
+.contact-form-msg.success { color: var(--orange-yellow-crayola); }
+
 .input-wrapper {
   display: grid;
   grid-template-columns: 1fr;
