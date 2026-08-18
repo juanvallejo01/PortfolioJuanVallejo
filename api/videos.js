@@ -34,6 +34,23 @@ function getEmbedUrl(rawUrl) {
     return id && /^\d+$/.test(id) ? `https://player.vimeo.com/video/${id}` : null;
   }
 
+  // Google Slides presentations
+  if (host === 'docs.google.com' && u.pathname.startsWith('/presentation/')) {
+    const match = u.pathname.match(/\/presentation\/d\/([^/]+)/);
+    return match ? `https://docs.google.com/presentation/d/${match[1]}/embed` : null;
+  }
+
+  // Google Drive files (PDF, PPT, etc.)
+  if (host === 'drive.google.com' && u.pathname.startsWith('/file/')) {
+    const match = u.pathname.match(/\/file\/d\/([^/]+)/);
+    return match ? `https://drive.google.com/file/d/${match[1]}/preview` : null;
+  }
+
+  // Direct PDF links
+  if (u.pathname.toLowerCase().endsWith('.pdf')) {
+    return rawUrl.trim();
+  }
+
   return null;
 }
 
@@ -95,7 +112,7 @@ module.exports = async function handler(req, res) {
 
     const embedUrl = getEmbedUrl(String(url).trim());
     if (!embedUrl) {
-      res.status(400).json({ error: 'Link de video no reconocido. Usa un link de YouTube o Vimeo.' });
+      res.status(400).json({ error: 'Link no reconocido. Usa YouTube, Vimeo, Google Slides, Google Drive o un link directo a un PDF.' });
       return;
     }
 

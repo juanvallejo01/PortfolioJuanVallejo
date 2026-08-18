@@ -1945,6 +1945,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
+   * VIDEOS
+   */
+
+  .videos .article-title { max-width: 260px; }
+
+
+
+  /**
    * ABOUT
    */
 
