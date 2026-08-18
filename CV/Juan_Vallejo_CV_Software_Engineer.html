@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Juan Vallejo — Software Engineer — CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --accent:#1F3A5F;
+  --accent-rgb:31,58,95;
+  --text:#1a1a1a;
+  --muted:#55565c;
+  --line:#e6e6e6;
+  --tint:rgba(31,58,95,0.055);
+  --tint-strong:rgba(31,58,95,0.11);
+  --tint-border:rgba(31,58,95,0.28);
+  --serif:Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;
+  --sans:-apple-system,"Segoe UI",Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;}
+body{font-family:var(--sans);color:var(--text);font-size:9.6pt;line-height:1.37;background:#fff;}
+.page{max-width:800px;margin:0 auto;padding:0 40px 28px;}
+
+header.cv-header{margin:0 -40px 14px;padding:22px 40px 15px;background:linear-gradient(120deg,var(--tint-strong),var(--tint) 55%,transparent 95%);border-bottom:2.2px solid var(--accent);}
+.header-top{display:flex;align-items:center;gap:13px;}
+.monogram{width:46px;height:46px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:15pt;font-weight:700;flex-shrink:0;}
+h1.name{font-family:var(--serif);font-size:21pt;margin:0 0 1px;font-weight:700;letter-spacing:.2px;color:var(--text);}
+.title-line{font-size:10.8pt;font-weight:600;color:var(--accent);margin:0;letter-spacing:.2px;}
+.contact-line{font-size:8.5pt;color:var(--muted);margin-top:8px;display:flex;flex-wrap:wrap;align-items:center;}
+.contact-line a{color:var(--muted);text-decoration:none;}
+.contact-line span.sep{color:var(--accent);margin:0 7px;font-weight:700;}
+
+section{margin-bottom:10px;}
+h2.section-title{display:inline-block;font-family:var(--sans);font-size:8.6pt;text-transform:uppercase;letter-spacing:1.4px;font-weight:700;color:#fff;background:var(--accent);padding:3px 10px;border-radius:3px;margin:0 0 7px;}
+
+.summary p{margin:0;color:var(--text);text-align:justify;}
+
+.skills-block{margin-bottom:6px;}
+.skills-block:last-child{margin-bottom:0;}
+.skill-cat-label{font-weight:700;font-size:8.7pt;color:var(--accent);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
+.chip-row{display:flex;flex-wrap:wrap;gap:4px;}
+.chip{background:var(--tint-strong);color:var(--text);border:1px solid var(--tint-border);padding:2px 8px;border-radius:9px;font-size:8.2pt;white-space:nowrap;}
+.chip-row.mini .chip{background:transparent;border:none;padding:0;color:var(--accent);font-weight:600;font-size:8.2pt;}
+.chip-row.mini .chip:not(:last-child)::after{content:"·";color:var(--line);margin-left:7px;font-weight:400;}
+
+.entry{border-left:3px solid var(--accent);background:linear-gradient(to right,var(--tint),transparent 55%);padding:6px 11px;border-radius:0 4px 4px 0;margin-bottom:6px;page-break-inside:avoid;}
+.entry:last-child{margin-bottom:0;}
+.entry-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+.entry-title{font-family:var(--serif);font-weight:700;font-size:9.9pt;color:var(--text);}
+.entry-sub{color:var(--muted);font-size:8.8pt;margin-top:1px;}
+.entry-date{background:var(--tint-strong);color:var(--accent);padding:1px 8px;border-radius:8px;font-size:7.9pt;font-weight:700;white-space:nowrap;}
+ul.bullets{list-style:none;margin:3px 0 0;padding:0;}
+ul.bullets li{padding-left:12px;position:relative;margin-bottom:1px;font-size:9.2pt;}
+ul.bullets li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-weight:700;}
+.entry-links{font-size:8.1pt;color:var(--muted);margin-top:2px;font-style:italic;}
+
+.lang-row{display:flex;gap:8px;}
+.lang-pill{background:var(--tint-strong);border:1px solid var(--tint-border);border-radius:8px;padding:3px 12px;font-size:8.8pt;}
+.lang-pill b{color:var(--accent);}
+
+@media print{
+  body{font-size:9.4pt;}
+  .page{padding:0 40px 28px;max-width:100%;}
+  header.cv-header{margin:0 -40px 12px;}
+  @page{size:A4;margin:8mm 10mm;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="cv-header">
+    <div class="header-top">
+      <div class="monogram">JV</div>
+      <div>
+        <h1 class="name">Juan Vallejo</h1>
+        <p class="title-line">Software Engineer</p>
+      </div>
+    </div>
+    <p class="contact-line">
+      Cali, Colombia <span class="sep">•</span>
+      <a href="mailto:juan.c.vallejo01@gmail.com">juan.c.vallejo01@gmail.com</a> <span class="sep">•</span>
+      +57 315 048 5151 <span class="sep">•</span>
+      <a href="https://www.linkedin.com/in/juan-vallejo-4587962a6/">linkedin.com/in/juan-vallejo-4587962a6</a> <span class="sep">•</span>
+      <a href="https://github.com/juanvallejo01">github.com/juanvallejo01</a> <span class="sep">•</span>
+      <a href="https://juanvallejo.site3.uk/">juanvallejo.site3.uk</a>
+    </p>
+  </header>
+
+  <section class="summary">
+    <h2 class="section-title">Professional Summary</h2>
+    <p>Software Engineer with 2+ years of hands-on experience designing and shipping full-stack web applications across the Node.js/NestJS, Next.js, and ASP.NET Core ecosystems. Proven track record delivering production systems for residential management, sports club administration, and university-scale social platforms — owning everything from data modeling to deployment. Comfortable moving between backend architecture, RESTful API design, and modern frontend development, with growing focus on cloud infrastructure and application security. Vice President of the IEEE Computer Society at Universidad Santiago de Cali, combining technical execution with team leadership. Fast learner who adopts new stacks quickly and leverages AI-assisted development workflows to ship reliable software faster.</p>
+  </section>
+
+  <section class="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="skills-block"><div class="skill-cat-label">Programming Languages</div><div class="chip-row"><span class="chip">JavaScript</span><span class="chip">TypeScript</span><span class="chip">Python</span><span class="chip">C#</span><span class="chip">SQL</span><span class="chip">PHP</span><span class="chip">Dart</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">Frontend</div><div class="chip-row"><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span><span class="chip">HTML5</span><span class="chip">CSS3</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">Backend &amp; APIs</div><div class="chip-row"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">NestJS</span><span class="chip">ASP.NET Core MVC</span><span class="chip">RESTful APIs</span><span class="chip">WebSockets</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">Databases &amp; ORMs</div><div class="chip-row"><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Prisma</span><span class="chip">Drizzle ORM</span><span class="chip">Entity Framework Core</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">Cloud &amp; Deployment</div><div class="chip-row"><span class="chip">AWS S3</span><span class="chip">Firebase</span><span class="chip">Vercel</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">DevOps &amp; Tools</div><div class="chip-row"><span class="chip">Docker</span><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">GitLab</span><span class="chip">Linux (Ubuntu)</span><span class="chip">Postman</span><span class="chip">CI/CD</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">Security &amp; Networking</div><div class="chip-row"><span class="chip">JWT</span><span class="chip">bcrypt</span><span class="chip">RBAC</span><span class="chip">Secure API Design</span><span class="chip">Network Fundamentals (Cisco)</span></div></div>
+    <div class="skills-block"><div class="skill-cat-label">AI-Assisted Development</div><div class="chip-row"><span class="chip">Claude Code</span></div></div>
+  </section>
+
+  <section class="projects">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">Urbanix — Residential Community Management SaaS</span></div>
+      <div class="chip-row mini"><span class="chip">React 19</span><span class="chip">Vite</span><span class="chip">Tailwind CSS</span><span class="chip">NestJS 11</span><span class="chip">Prisma</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">WebSockets</span><span class="chip">AWS S3</span><span class="chip">Firebase</span></div>
+      <ul class="bullets">
+        <li>Architected a modular multi-role SaaS platform (admin, resident, superadmin, security staff) spanning 25+ backend modules to replace manual, paper-based building administration.</li>
+        <li>Built real-time features with Socket.io and AWS S3-backed document storage, covering visitor logs, common-area reservations, billing, and incident reporting.</li>
+        <li>Designed JWT-secured REST APIs and PostgreSQL data models supporting concurrent multi-tenant residential complexes.</li>
+      </ul>
+      <p class="entry-links">Client project — Codeliance</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">CDGLOBOS — Sports Club Management System</span></div>
+      <div class="chip-row mini"><span class="chip">NestJS</span><span class="chip">Prisma</span><span class="chip">PostgreSQL</span><span class="chip">Next.js 15</span><span class="chip">React 19</span><span class="chip">Firebase Cloud Messaging</span><span class="chip">PWA</span></div>
+      <ul class="bullets">
+        <li>Delivered a full digital operations platform for a sports club, covering player rosters, match scheduling, tournaments, training attendance, and payments across 12 backend modules.</li>
+        <li>Implemented push notifications (FCM), PDF report generation, and an installable PWA experience for players and administrators.</li>
+      </ul>
+      <p class="entry-links">Client project — Codeliance</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">USConnect (Campus Circle) — University Social Networking App</span></div>
+      <div class="chip-row mini"><span class="chip">NestJS 10</span><span class="chip">Prisma</span><span class="chip">Next.js 14</span><span class="chip">TypeScript</span><span class="chip">JWT/Passport</span><span class="chip">bcrypt</span></div>
+      <ul class="bullets">
+        <li>Designed a mutual-match social engine with permanent like-based matching, chat-unlock rules, and a real-time campus ranking system for university students.</li>
+        <li>Structured the frontend around a provider/context architecture to keep business logic isolated from presentational components, improving maintainability.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head"><span class="entry-title">ARVALA-SGPE — Poultry Farm Management System</span></div>
+      <div class="chip-row mini"><span class="chip">ASP.NET Core 9 MVC</span><span class="chip">C#</span><span class="chip">PostgreSQL 17</span><span class="chip">Entity Framework Core</span><span class="chip">Clean Architecture</span></div>
+      <ul class="bullets">
+        <li>Designed and implemented a Clean Architecture system (Domain/Infrastructure/Services/Web) to digitize poultry house tracking, egg production, vaccination schedules, and feed inventory.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section class="experience">
+    <h2 class="section-title">Professional Experience</h2>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Backend Developer — Codeliance</span>
+        <span class="entry-date">Feb 2025 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed and automated backend workflows for administrative and documentary process management across client products, improving data consistency and reducing manual handling.</li>
+        <li>Contributed to production platforms including a residential management SaaS, a sports club system, and a social media automation tool.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Backend Developer — TechNova Solutions</span>
+        <span class="entry-date">Apr 2024 – Nov 2024</span>
+      </div>
+      <ul class="bullets">
+        <li>Contributed to building scalable web platforms, including a SaaS application for residential management, by designing RESTful APIs with Node.js, Express, and Prisma over PostgreSQL.</li>
+        <li>Automated internal processes using Python and AutoHotKey and integrated workflows with Google Workspace, while participating in architectural decisions and deployments.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="education">
+    <h2 class="section-title">Education</h2>
+    <div class="entry">
+      <div class="entry-head">
+        <span class="entry-title">Computer Engineering (In Progress)</span>
+        <span class="entry-date">2023 – Present</span>
+      </div>
+      <p class="entry-sub">Universidad Santiago de Cali, Colombia — Member, Comba Research &amp; Development Incubator</p>
+    </div>
+  </section>
+
+  <section class="certifications">
+    <h2 class="section-title">Certifications</h2>
+    <ul class="bullets">
+      <li><b>Cybersecurity &amp; Networking:</b> Ethical Hacker — Cisco Networking Academy (Verified) · Introduction to Cybersecurity — Cisco Networking Academy (Verified)</li>
+      <li><b>Programming:</b> C# — Ademass Training &amp; Development · Python — Ademass Training &amp; Development</li>
+      <li><b>Databases:</b> Bases de Datos: Generalidades y Sistemas de Gestión — SENA (40h, 2025)</li>
+    </ul>
+  </section>
+
+  <section class="achievements">
+    <h2 class="section-title">Achievements &amp; Leadership</h2>
+    <ul class="bullets">
+      <li>Vice President, IEEE Computer Society — Universidad Santiago de Cali (2025 – 2026)</li>
+      <li>Active Member, ETH Cali — Web3 &amp; blockchain hackathon participant (2026 – Present)</li>
+    </ul>
+  </section>
+
+  <section class="languages">
+    <h2 class="section-title">Languages</h2>
+    <div class="lang-row">
+      <span class="lang-pill"><b>Spanish</b> — Native</span>
+      <span class="lang-pill"><b>English</b> — B2 (Upper Intermediate)</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
