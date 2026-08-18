@@ -1,7 +1,16 @@
 const { Client } = require('pg');
 const crypto = require('crypto');
 
-function getEmbedUrl(rawUrl) {
+const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'];
+const OFFICE_EXTENSIONS = ['.ppt', '.pptx', '.doc', '.docx', '.xls', '.xlsx'];
+
+function extensionOf(pathname) {
+  const match = pathname.toLowerCase().match(/(\.[a-z0-9]+)$/);
+  return match ? match[1] : '';
+}
+
+// Resolves any pasted link or uploaded-file URL into how it should be rendered.
+function resolveContent(rawUrl) {
   let u;
   try {
     u = new URL(rawUrl);
@@ -10,45 +19,53 @@ function getEmbedUrl(rawUrl) {
   }
 
   const host = u.hostname.replace(/^www\./, '');
+  const ext = extensionOf(u.pathname);
 
   if (host === 'youtu.be') {
     const id = u.pathname.slice(1);
-    return id ? `https://www.youtube.com/embed/${id}` : null;
+    return id ? { kind: 'iframe', src: `https://www.youtube.com/embed/${id}` } : null;
   }
 
   if (host === 'youtube.com' || host === 'm.youtube.com') {
     if (u.pathname === '/watch') {
       const id = u.searchParams.get('v');
-      return id ? `https://www.youtube.com/embed/${id}` : null;
+      return id ? { kind: 'iframe', src: `https://www.youtube.com/embed/${id}` } : null;
     }
-    if (u.pathname.startsWith('/embed/')) return `https://www.youtube.com${u.pathname}`;
+    if (u.pathname.startsWith('/embed/')) return { kind: 'iframe', src: `https://www.youtube.com${u.pathname}` };
     if (u.pathname.startsWith('/shorts/')) {
       const id = u.pathname.split('/')[2];
-      return id ? `https://www.youtube.com/embed/${id}` : null;
+      return id ? { kind: 'iframe', src: `https://www.youtube.com/embed/${id}` } : null;
     }
     return null;
   }
 
   if (host === 'vimeo.com') {
     const id = u.pathname.split('/').filter(Boolean)[0];
-    return id && /^\d+$/.test(id) ? `https://player.vimeo.com/video/${id}` : null;
+    return id && /^\d+$/.test(id) ? { kind: 'iframe', src: `https://player.vimeo.com/video/${id}` } : null;
   }
 
   // Google Slides presentations
   if (host === 'docs.google.com' && u.pathname.startsWith('/presentation/')) {
     const match = u.pathname.match(/\/presentation\/d\/([^/]+)/);
-    return match ? `https://docs.google.com/presentation/d/${match[1]}/embed` : null;
+    return match ? { kind: 'iframe', src: `https://docs.google.com/presentation/d/${match[1]}/embed` } : null;
   }
 
-  // Google Drive files (PDF, PPT, etc.)
+  // Google Drive files
   if (host === 'drive.google.com' && u.pathname.startsWith('/file/')) {
     const match = u.pathname.match(/\/file\/d\/([^/]+)/);
-    return match ? `https://drive.google.com/file/d/${match[1]}/preview` : null;
+    return match ? { kind: 'iframe', src: `https://drive.google.com/file/d/${match[1]}/preview` } : null;
   }
 
-  // Direct PDF links
-  if (u.pathname.toLowerCase().endsWith('.pdf')) {
-    return rawUrl.trim();
+  if (IMAGE_EXTENSIONS.includes(ext)) {
+    return { kind: 'image', src: rawUrl.trim() };
+  }
+
+  if (ext === '.pdf') {
+    return { kind: 'iframe', src: rawUrl.trim() };
+  }
+
+  if (OFFICE_EXTENSIONS.includes(ext)) {
+    return { kind: 'iframe', src: `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(rawUrl.trim())}` };
   }
 
   return null;
@@ -68,13 +85,24 @@ function passwordMatches(candidate) {
   return crypto.timingSafeEqual(a, b);
 }
 
+async function deleteBlobIfOwned(url) {
+  try {
+    const host = new URL(url).hostname;
+    if (!host.endsWith('.public.blob.vercel-storage.com')) return;
+    const { del } = require('@vercel/blob');
+    await del(url);
+  } catch (err) {
+    console.error('Blob cleanup failed:', err);
+  }
+}
+
 module.exports = async function handler(req, res) {
   if (req.method === 'GET') {
     const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
     try {
       await client.connect();
       const { rows } = await client.query(
-        'SELECT id, title, video_url, embed_url, created_at FROM videos ORDER BY created_at DESC'
+        'SELECT id, title, video_url, embed_url, kind, created_at FROM videos ORDER BY created_at DESC'
       );
       res.status(200).json(rows);
     } catch (err) {
@@ -110,9 +138,11 @@ module.exports = async function handler(req, res) {
       return;
     }
 
-    const embedUrl = getEmbedUrl(String(url).trim());
-    if (!embedUrl) {
-      res.status(400).json({ error: 'Link no reconocido. Usa YouTube, Vimeo, Google Slides, Google Drive o un link directo a un PDF.' });
+    const content = resolveContent(String(url).trim());
+    if (!content) {
+      res.status(400).json({
+        error: 'Link no reconocido. Usa YouTube, Vimeo, Google Slides, Google Drive, o un archivo PDF/imagen/PowerPoint.',
+      });
       return;
     }
 
@@ -120,8 +150,8 @@ module.exports = async function handler(req, res) {
     try {
       await client.connect();
       const { rows } = await client.query(
-        'INSERT INTO videos (title, video_url, embed_url) VALUES ($1, $2, $3) RETURNING id, title, video_url, embed_url, created_at',
-        [cleanTitle, String(url).trim(), embedUrl]
+        'INSERT INTO videos (title, video_url, embed_url, kind) VALUES ($1, $2, $3, $4) RETURNING id, title, video_url, embed_url, kind, created_at',
+        [cleanTitle, String(url).trim(), content.src, content.kind]
       );
       res.status(201).json(rows[0]);
     } catch (err) {
@@ -150,7 +180,9 @@ module.exports = async function handler(req, res) {
     const client = new Client({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
     try {
       await client.connect();
+      const { rows } = await client.query('SELECT video_url FROM videos WHERE id = $1', [videoId]);
       await client.query('DELETE FROM videos WHERE id = $1', [videoId]);
+      if (rows[0]) await deleteBlobIfOwned(rows[0].video_url);
       res.status(204).end();
     } catch (err) {
       console.error(err);

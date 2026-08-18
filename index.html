@@ -943,14 +943,26 @@
 
             <h3 class="h4 form-title">Agregar contenido</h3>
 
+            <div class="video-source-toggle" role="tablist">
+              <button type="button" class="video-source-btn active" data-video-source-btn="link" role="tab" aria-selected="true">
+                Pegar link
+              </button>
+              <button type="button" class="video-source-btn" data-video-source-btn="file" role="tab" aria-selected="false">
+                Subir archivo
+              </button>
+            </div>
+
             <div class="input-wrapper">
               <input type="text" name="title" class="form-input" placeholder="Título" required maxlength="200" data-video-title-input>
+
               <input type="url" name="url" class="form-input" placeholder="Link de YouTube, Vimeo, Google Slides, Drive o PDF" required data-video-url-input>
+
+              <input type="file" name="file" class="form-input" accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,.ppt,.pptx" data-video-file-input style="display: none;">
             </div>
 
             <button class="form-btn" type="submit">
               <ion-icon name="add-outline"></ion-icon>
-              <span>Agregar</span>
+              <span data-video-submit-label>Agregar</span>
             </button>
 
             <p class="video-form-msg" data-video-form-msg></p>
@@ -1251,7 +1263,7 @@
   -->
   <script src="./assets/js/script.js"></script>
   <script src="./assets/js/warp.js"></script>
-  <script src="./assets/js/videos.js"></script>
+  <script type="module" src="./assets/js/videos.js"></script>
 
   <!--
     - ionicon link
