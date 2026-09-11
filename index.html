@@ -273,7 +273,7 @@
 
         <section class="about-text">
           <p>
-            I am a passionate developer from Cali, Colombia, currently a sixth semester systems engineering student.
+            I am a passionate developer from Cali, Colombia, currently an eighth semester systems engineering student.
           <a href="./assets/Juan_Vallejo_CV.pdf"
              target="_blank"
              class="btn-resume">
@@ -395,6 +395,23 @@
                   <strong>Crypto Agent</strong> is an autonomous quantitative trading bot for Binance Spot, built in Python with CCXT. It runs a moving-average crossover and RSI strategy gated by a machine-learning filter (scikit-learn), with strict risk management: mandatory stop-loss/take-profit, a consecutive-loss circuit breaker, a daily-loss kill switch, and execution reconciliation that never assumes an order succeeded. A Flask multi-user platform lets each user run an isolated bot with their own Fernet-encrypted API keys, alongside a live dashboard and Telegram alerts. Zero-withdrawal by design.
                 </p>
                 <a href="https://github.com/juanvallejo01/crypto-agent" class="btn-view" target="_blank">View</a>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">"SwipeFi"</h4>
+
+                <p class="service-item-text">
+                  <strong>SwipeFi</strong> is a Telegram Mini App built for the ETHGlobal 1inch Aqua/SwapVM track that collapses swap-approve-stake into a single atomic on-chain transaction: USDC is swapped into ETH through 1inch Aqua liquidity and staked directly into Lido for stETH, in one "swipe." The SwapVM compiler wires <code>AquaProtocolContract</code>, strategy-hash calculation, and <code>executeAtomic()</code> batch construction straight against the official <code>@1inch/aqua-sdk</code>, with all calldata ABI-encoded via viem, and the full flow is validated against a local Ethereum Mainnet Fork (Hardhat) before any real exposure. Built with Next.js, ethers.js/viem, and the Telegram Mini App SDK.
+                </p>
+                <a href="https://github.com/juanvallejo01/SwipeFI" class="btn-view" target="_blank">View</a>
               </div>
 
             </li>
