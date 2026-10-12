@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juan Vallejo | Full Stack Developer & Software Engineer</title>
-  <meta name="description" content="Portfolio de Juan Vallejo, desarrollador Full Stack e ingeniero de sistemas en Cali, Colombia. Proyectos, hoja de vida, certificados y contacto.">
+  <title>Juan Vallejo — Backend & Web3 Engineer</title>
+  <meta name="description" content="Juan Vallejo builds production backends (Node.js, Prisma, PostgreSQL) and on-chain systems (1inch Aqua, Lido, viem). Case studies, experience and verified credentials. Open to remote work.">
   <meta name="author" content="Juan Vallejo">
   <link rel="canonical" href="https://juanvallejo.nbmates.com/">
+  <meta name="theme-color" content="#07080c">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Juan Vallejo | Full Stack Developer & Software Engineer">
-  <meta property="og:description" content="Portfolio de Juan Vallejo, desarrollador Full Stack e ingeniero de sistemas en Cali, Colombia. Proyectos, hoja de vida, certificados y contacto.">
+  <meta property="og:title" content="Juan Vallejo — Backend & Web3 Engineer">
+  <meta property="og:description" content="Production backends and on-chain systems that don't break. Case studies: SwipeFi, Crypto Agent, Urbanix.">
   <meta property="og:url" content="https://juanvallejo.nbmates.com/">
   <meta property="og:image" content="https://juanvallejo.nbmates.com/assets/images/juan-vallejo.png">
-  <meta property="og:locale" content="es_CO">
   <meta property="og:site_name" content="Juan Vallejo">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Juan Vallejo | Full Stack Developer & Software Engineer">
-  <meta name="twitter:description" content="Portfolio de Juan Vallejo, desarrollador Full Stack e ingeniero de sistemas en Cali, Colombia.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Juan Vallejo — Backend & Web3 Engineer">
+  <meta name="twitter:description" content="Production backends and on-chain systems that don't break.">
   <meta name="twitter:image" content="https://juanvallejo.nbmates.com/assets/images/juan-vallejo.png">
 
-  <!-- Structured data: helps search engines show a rich result for "Juan Vallejo" -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -33,14 +27,10 @@
     "name": "Juan Vallejo",
     "url": "https://juanvallejo.nbmates.com/",
     "image": "https://juanvallejo.nbmates.com/assets/images/juan-vallejo.png",
-    "jobTitle": "Full Stack Developer",
-    "description": "Desarrollador Full Stack e ingeniero de sistemas en Cali, Colombia.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santiago de Cali",
-      "addressRegion": "Valle del Cauca",
-      "addressCountry": "CO"
-    },
+    "jobTitle": "Backend & Web3 Engineer",
+    "worksFor": { "@type": "Organization", "name": "CodeLiance" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Santiago de Cali", "addressCountry": "CO" },
+    "knowsAbout": ["Node.js", "PostgreSQL", "Prisma", "Python", "Solidity", "viem", "ethers.js", "Web3"],
     "sameAs": [
       "https://www.linkedin.com/in/juan-vallejo-4587962a6/",
       "https://github.com/juanvallejo01",
@@ -50,1354 +40,285 @@
   }
   </script>
 
-  <!-- Otras inclusiones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-          
-
-  <!--
-    - favicon
-  -->
-  <link rel="shortcut icon" href="./assets/images/jcprofile11.png" type="image/png">
-
-  <!--
-    - custom css link
-  -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!--
-    - google font link
-  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/v2.css">
 </head>
 
 <body>
+  <a class="skip" href="#work">Skip to work</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-  <!--
-    - warp background
-  -->
-  <canvas id="warp-canvas"></canvas>
-
-  <!--
-    - #MAIN
-  -->
-
-  <main>
-
-    <!--
-      - #SIDEBAR
-    -->
-
-    <aside class="sidebar" data-sidebar>
-
-      <div class="sidebar-info">
-
-        <figure class="avatar-box">
-          <img src="./assets/images/juan-vallejo.png" alt="Juan Vallejo" width="80">
-        </figure>
-
-        <div class="info-content">
-          <h1 class="name" title="Juan Vallejo">Juan Vallejo</h1>
-        </div>
-
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-
-              <a href="mailto:juan.c.vallejo01@gmail.com" class="contact-link">juan.c.vallejo01@gmail.com</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="phone-portrait-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-
-              <a href="https://wa.me/573150485151?text=Hola%20Juan%20,%20me%20interesa%20tu%20servicio%20como%20desarrollador" class="contact-link">+57 3150485151</a>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">febrero 19 , 2006</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-
-              <address>Santiago de Cali, Valle del cauca, COLOMBIA</address>
-            </div>
-
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://www.youtube.com/@JuanValllejo" class="social-link" target="_blank">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-        
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/juan-vallejo-4587962a6/" class="social-link" target="_blank">
-              <i class="fab fa-linkedin"></i>
-            </a>
-          </li>
-        
-          <li class="social-item">
-            <a href="https://github.com/juanvallejo01" class="social-link" target="_blank">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-        
-          <li class="social-item">
-            <a href="https://gitlab.com/juanvallejo01" class="social-link" target="_blank">
-              <i class="fab fa-gitlab"></i>
-            </a>
-          </li>
-        
-        </ul>
-        
-
-      </div>
-
-    </aside>
-
-
-
-
-
-    <!--
-      - #main-content
-    -->
-
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Certificates</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Videos</button>
-          </li>
-
-          <!--
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Blog</button>
-          </li> -->
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
+  <!-- NAV -->
+  <header class="nav" data-nav>
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Juan Vallejo, home">
+        <span class="brand-mark">JV</span>
+        <span class="brand-name">Juan Vallejo</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#experience">Experience</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact">Contact</a>
       </nav>
-
-
-
-
-
-      <!--
-        <a href="https://detectamugre.praktil.co/DevCristobalvc/ApiDevCristobalvc/ApiFilesDevCristobalvc.php" class="btn-view" target="_blank">View</a>
-        - #ABOUT
-      -->
-
-      <article class="about  active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am a passionate developer from Cali, Colombia, currently an eighth semester systems engineering student.
-          <a href="./assets/Juan_Vallejo_CV.pdf"
-             target="_blank"
-             class="btn-resume">
-            <ion-icon name="document-text-outline"></ion-icon>
-            <span>See Resume</span>
-          </a>
-          </p>
-
-          <p>
-            I stand out for my strong communication skills, adaptability to diverse work environments, and professional attitude. I enjoy working in teams, learning new technologies, and bringing real value to every project I work on.
-          </p>
-        </section>
-
-
-        <!--
-          - service
-        -->
-
-        <section class="service">
-
-          <h3 class="h3 service-title">Some Projects</h3>
-
-          <ul class="service-list">
-              <!--
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Design Mockups</h4>
-
-                <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
-                <p class="service-item-text">
-                  High-quality development of sites at the professional level.
-                </p>
-              </div>
-
-            </li>
-                    -->
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">"BabyMom"</h4>
-
-                <p class="service-item-text">
-                  BabyMom is a mobile application focused on supporting mothers during the lactation and early parenting stages. Developed in Flutter, it features intuitive UI components and real-time data registration for baby feeding, sleep tracking, and health metrics. Firebase is used for backend services such as authentication, storage, and analytics, ensuring secure and seamless user experience across Android and iOS.
-                </p>
-                <a href="https://github.com/sinisini29/babyMom-flutter" class="btn-view" target="_blank">View</a>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="desing icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">"Urbanix"</h4>
-
-                <p class="service-item-text">
-                  Urbanix is a web-based SaaS platform developed for residential complex management. Built with a full-stack architecture using React, Tailwind, Node.js, Express, Prisma, and PostgreSQL, it offers modules for visitor registration, resident control, common area reservations, document management, and real-time notifications. JWT-secured sessions and modular design ensure scalability and data integrity.
-                </p>
-                <a href="https://github.com/DevCristobalvc/DetectaMugre" class="btn-view" target="_blank">View</a>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">"Onkai"</h4>
-
-                <p class="service-item-text">
-                  <strong>Onkai</strong> is a Web2.5/Web3 social platform that enables creators to monetize digital interactions through blockchain technology. Built with a modern full-stack architecture, it integrates embedded cryptocurrency wallets, peer-to-peer crypto payments, and configurable interaction values, allowing creators to assign economic value to likes, subscriptions, tips, and other forms of engagement. Designed with scalability, security, and a seamless user experience in mind, Onkai aims to bridge the accessibility of traditional social networks with the transparency and ownership offered by decentralized technologies, providing an alternative monetization model to platforms such as Instagram and TikTok.
-                </p>
-                <a href="https://github.com/juanvallejo01/web2-web3-mvp" class="btn-view" target="_blank">View</a>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">"Crypto Agent"</h4>
-
-                <p class="service-item-text">
-                  <strong>Crypto Agent</strong> is an autonomous quantitative trading bot for Binance Spot, built in Python with CCXT. It runs a moving-average crossover and RSI strategy gated by a machine-learning filter (scikit-learn), with strict risk management: mandatory stop-loss/take-profit, a consecutive-loss circuit breaker, a daily-loss kill switch, and execution reconciliation that never assumes an order succeeded. A Flask multi-user platform lets each user run an isolated bot with their own Fernet-encrypted API keys, alongside a live dashboard and Telegram alerts. Zero-withdrawal by design.
-                </p>
-                <a href="https://github.com/juanvallejo01/crypto-agent" class="btn-view" target="_blank">View</a>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="web development icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">"SwipeFi"</h4>
-
-                <p class="service-item-text">
-                  <strong>SwipeFi</strong> is a Telegram Mini App built for the ETHGlobal 1inch Aqua/SwapVM track that collapses swap-approve-stake into a single atomic on-chain transaction: USDC is swapped into ETH through 1inch Aqua liquidity and staked directly into Lido for stETH, in one "swipe." The SwapVM compiler wires <code>AquaProtocolContract</code>, strategy-hash calculation, and <code>executeAtomic()</code> batch construction straight against the official <code>@1inch/aqua-sdk</code>, with all calldata ABI-encoded via viem, and the full flow is validated against a local Ethereum Mainnet Fork (Hardhat) before any real exposure. Built with Next.js, ethers.js/viem, and the Telegram Mini App SDK.
-                </p>
-                <a href="https://github.com/juanvallejo01/SwipeFI" class="btn-view" target="_blank">View</a>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section> 
-
-
-        <!--
-          - testimonials
-        
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Testimonials</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section> -->
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <time datetime="2021-06-14">14 June, 2021</time>
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-                </p>
-              </div>
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-        <style>
-          .clients-list {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-          }
-          .clients-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 80px;
-            height: 80px;
-          }
-          .clients-item i {
-            font-size: 96px;
-            color: rgb(255, 219, 112);
-          }
-        </style>
-
-        <section class="clients">
-          <h3 class="h3 clients-title">Technologies</h3>
-          <ul class="clients-list has-scrollbar">
-            <li class="clients-item">
-                <i class="devicon-php-plain"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-nodejs-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-python-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-react-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-flutter-plain"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-postgresql-plain-wordmark"></i>
-            </ul>
-        </section>
-
-        <section class="clients">
-          <h3 class="h3 clients-title">Tools</h3>
-          <ul class="clients-list has-scrollbar">
-            <li class="clients-item">
-                <i class="devicon-git-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-docker-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-ubuntu-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-firebase-plain-wordmark"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-postman-plain"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-figma-plain"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-canva-original"></i>
-              </a>
-            </li>
-            <li class="clients-item">
-                <i class="devicon-filezilla-plain-wordmark"></i>
-            </ul>
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #RESUME
-      -->
-
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume</h2>
-        </header>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Computer Engineering</h4>
-
-              <span>2023 — Present</span>
-
-              <p class="timeline-text">
-                Santiago de Cali University, membership in the Comba Research and Development Incubator
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Vice president of IEEE Computer Society USC</h4>
-
-              <span>2025 — 2026</span>
-
-              <p class="timeline-text">
-                Universidad Santiago de Cali - Colombia
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Ethical Hacker</h4>
-
-              <span>2025 — 2026</span>
-
-              <p class="timeline-text">
-                Cisco Networking Academy
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Backend Developer at CodeLiance</h4>
-
-              <span>2025 February — Present</span>
-
-              <p class="timeline-text">
-                Support in the systematization and automation of the information on administrative and documentary processes
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">TechNova Solutions – Backend Developer</h4>
-
-              <span>2024 April — November</span>
-
-              <p class="timeline-text">
-                As part of the backend development team at TechNova Solutions, I contributed to building scalable web platforms, including a SaaS application for residential management. My role involved designing RESTful APIs with Node.js, Express, and Prisma, managing PostgreSQL databases, automating internal processes using Python and AutoHotKey, integrating workflows with Google Workspace, and actively participating in architectural decisions and system deployments.
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">ETH Cali Member & Web3 Hackathon Participant</h4>
-
-              <span>2026 — Present</span>
-
-              <p class="timeline-text">
-                Active member of ETH Cali, participating in Web3 and Crypto hackathons.
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="skill">
-
-          <h3 class="h3 skills-title">Soft Skills</h3>
-
-          <ul class="soft-skills-list content-card">
-
-            <li class="soft-skills-item">
-              <div class="icon-box">
-                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
-              </div>
-              <h5 class="h5">Effective Communication</h5>
-            </li>
-
-            <li class="soft-skills-item">
-              <div class="icon-box">
-                <ion-icon name="people-outline"></ion-icon>
-              </div>
-              <h5 class="h5">Teamwork & Collaboration</h5>
-            </li>
-
-            <li class="soft-skills-item">
-              <div class="icon-box">
-                <ion-icon name="bulb-outline"></ion-icon>
-              </div>
-              <h5 class="h5">Adaptability & Problem Solving</h5>
-            </li>
-
-            <li class="soft-skills-item">
-              <div class="icon-box">
-                <ion-icon name="time-outline"></ion-icon>
-              </div>
-              <h5 class="h5">Time Management</h5>
-            </li>
-
-            <li class="soft-skills-item">
-              <div class="icon-box">
-                <ion-icon name="language-outline"></ion-icon>
-              </div>
-              <h5 class="h5">English B2</h5>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="certificates" data-page="certificates">
-
-        <header>
-          <h2 class="h2 article-title">Certificates</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list" style="display: none;">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web developmen</button> <!-- This is the principal button -->
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box" style="display: none;">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <!-- ETH Cali - EAG Global Buildathon 2026 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/ETHCali-certificado-EAGCALI26-Q9ABVFHM.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/ETHCali-certificado-EAGCALI26-Q9ABVFHM.jpg" alt="ETH Cali Builder Certificate - EAG Global Buildathon 2026" loading="lazy">
-                </figure>
-                <h3 class="project-title">ETH Cali Builder · EAG Buildathon 2026</h3>
-              </a>
-            </li>
-
-            <!-- ETHGlobal - ETHOnline 2026 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/ethonline2026-juan-vallejo-certificate.jpg" alt="ETHGlobal ETHOnline 2026 Certificate of Participation - SwipeFi" loading="lazy">
-                </figure>
-                <h3 class="project-title">ETHGlobal · ETHOnline 2026</h3>
-              </a>
-            </li>
-
-            <!-- JPEG 1 -->
-            <li class="project-item active">
-              <a href="https://www.credly.com/badges/6f6f03eb-dad7-426d-91ee-12c24cbf2872" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/cert_1.jpeg" alt="Cisco Ethical Hacker" loading="lazy">
-                </figure> 
-                <h3 class="project-title">Ethical Hacker</h3>
-              </a>
-            </li>
-
-            <!-- JPEG 2 -->
-            <li class="project-item active">
-              <a href="https://www.credly.com/badges/a1cdb89c-cd3f-4c78-a55b-f3ff9e55f054" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/cert_2.jpeg" alt="Cisco Introduction to Cybersecurity" loading="lazy">
-                </figure> 
-                <h3 class="project-title">Introduction to Cybersecurity</h3>
-              </a>
-            </li>
-
-            <!-- PDF 1 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/9226003172985CC1108561814C.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/9226003172985CC1108561814C.jpg" alt="SENA Certificate" loading="lazy">
-                </figure>
-                <h3 class="project-title">SENA Certificate</h3>
-              </a>
-            </li>
-
-            <!-- PDF 2 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/Aplicacin_de_hoja_de_clculo_Excel_inters_simple_inters_compuesto.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/Aplicacin_de_hoja_de_clculo_Excel_inters_simple_inters_compuesto.jpg" alt="Excel: Interés Simple y Compuesto" loading="lazy">
-                </figure>
-                <h3 class="project-title">Excel: Interés Simple y Compuesto</h3>
-              </a>
-            </li>
-
-            <!-- PDF 3 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/Certificado_Excel_Intermedio.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/Certificado_Excel_Intermedio.jpg" alt="Excel Intermedio" loading="lazy">
-                </figure>
-                <h3 class="project-title">Excel Intermedio</h3>
-              </a>
-            </li>
-
-            <!-- PDF 4 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/diplomaC%23.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/diplomaC%23.jpg" alt="Diploma C#" loading="lazy">
-                </figure>
-                <h3 class="project-title">Diploma C#</h3>
-              </a>
-            </li>
-
-            <!-- PDF 5 -->
-            <li class="project-item active">
-              <a href="./assets/certificados/diplomaPython.pdf" target="_blank">
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-                  <img src="./assets/certificados/diplomaPython.jpg" alt="Diploma Python" loading="lazy">
-                </figure>
-                <h3 class="project-title">Diploma Python</h3>
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-      <!--
-        - #VIDEOS
-      -->
-
-      <article class="videos" data-page="videos">
-
-        <header>
-          <h2 class="h2 article-title">Presentaciones y Videos</h2>
-        </header>
-
-        <section class="videos-section">
-
-          <div class="videos-toolbar">
-            <p class="videos-empty-msg" data-videos-empty style="display: none;">Aún no hay contenido publicado.</p>
-
-            <button class="videos-lock-btn" data-videos-lock-btn type="button" aria-label="Administrar videos" title="Administrar videos">
-              <ion-icon name="lock-closed-outline"></ion-icon>
-            </button>
-          </div>
-
-          <ul class="video-list" data-video-list></ul>
-
-          <form class="video-add-form" data-video-add-form style="display: none;">
-
-            <h3 class="h4 form-title">Agregar contenido</h3>
-
-            <div class="video-source-toggle" role="tablist">
-              <button type="button" class="video-source-btn active" data-video-source-btn="link" role="tab" aria-selected="true">
-                Pegar link
-              </button>
-              <button type="button" class="video-source-btn" data-video-source-btn="file" role="tab" aria-selected="false">
-                Subir archivo
-              </button>
-            </div>
-
-            <div class="input-wrapper">
-              <input type="text" name="title" class="form-input" placeholder="Título" required maxlength="200" data-video-title-input>
-
-              <input type="url" name="url" class="form-input" placeholder="Link de YouTube, Vimeo, Google Slides, Drive o PDF" required data-video-url-input>
-
-              <input type="file" name="file" class="form-input" accept=".pdf,.png,.jpg,.jpeg,.webp,.gif,.ppt,.pptx" data-video-file-input style="display: none;">
-            </div>
-
-            <button class="form-btn" type="submit">
-              <ion-icon name="add-outline"></ion-icon>
-              <span data-video-submit-label>Agregar</span>
-            </button>
-
-            <p class="video-form-msg" data-video-form-msg></p>
-
-          </form>
-
-        </section>
-
-        <!--
-          - videos password modal
-        -->
-
-        <div class="modal-container" data-videos-modal-container>
-
-          <div class="overlay" data-videos-overlay></div>
-
-          <section class="videos-modal">
-
-            <button class="modal-close-btn" data-videos-modal-close-btn type="button">
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <h3 class="h3 modal-title">Acceso administrador</h3>
-
-            <p class="videos-modal-text">Ingresa la contraseña para agregar o eliminar contenido.</p>
-
-            <form data-videos-password-form>
-
-              <div class="input-wrapper" style="margin-bottom: 15px;">
-                <input type="password" class="form-input" placeholder="Contraseña" required autocomplete="current-password" data-videos-password-input>
-              </div>
-
-              <button class="form-btn" type="submit">
-                <ion-icon name="lock-open-outline"></ion-icon>
-                <span>Desbloquear</span>
-              </button>
-
-              <p class="videos-modal-error" data-videos-modal-error></p>
-
-            </form>
-
-          </section>
-
-        </div>
-
-      </article>
-
-
-
-
-      <!--
-        - #BLOG
-      -->
-
-      <article class="blog" data-page="blog">
-
-        <header>
-          <h2 class="h2 article-title">Blog</h2>
-        </header>
-
-        <section class="blog-posts">
-
-          <ul class="blog-posts-list">
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
-
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-
-
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps?q=Santiago+de+Cali,+Valle+del+Cauca,+Colombia&output=embed"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
-
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Contact Form</h3>
-
-          <form class="form" data-form novalidate>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
-            <!-- honeypot: hidden from real visitors, bots tend to fill every field -->
-            <input type="text" name="website" class="contact-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span data-form-btn-label>Send Message</span>
-            </button>
-
-            <p class="contact-form-msg" data-contact-form-msg></p>
-
-          </form>
-
-          <div class="contact-success" data-contact-success style="display: none;">
-
-            <div class="contact-success-icon">
-              <ion-icon name="checkmark-outline"></ion-icon>
-            </div>
-
-            <h4 class="contact-success-title">¡Mensaje enviado!</h4>
-
-            <p class="contact-success-text" data-contact-success-text></p>
-
-            <dl class="contact-success-summary" data-contact-success-summary></dl>
-
-            <button type="button" class="contact-success-btn" data-contact-success-reset>
-              <ion-icon name="arrow-undo-outline"></ion-icon>
-              <span>Enviar otro mensaje</span>
-            </button>
-
-          </div>
-
-        </section>
-
-      </article>
-
+      <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's talk</a>
     </div>
+  </header>
 
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero-copy">
+        <p class="eyebrow reveal"><span class="pulse"></span> Available for remote work · UTC−5</p>
+        <h1 class="hero-title reveal">
+          I engineer backends and on-chain systems
+          <span class="grad">that don't break.</span>
+        </h1>
+        <p class="hero-sub reveal">
+          Backend &amp; Web3 engineer. I ship production APIs with <b>Node.js, Prisma and PostgreSQL</b>, and atomic DeFi flows with <b>1inch Aqua, Lido and viem</b> — built for the moment something fails, not just the happy path.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#work" class="btn btn-primary">See case studies <span aria-hidden="true">→</span></a>
+          <a href="./assets/Juan_Vallejo_CV.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+        </div>
+        <ul class="socials reveal" aria-label="Profiles">
+          <li><a href="https://github.com/juanvallejo01" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/juan-vallejo-4587962a6/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@JuanValllejo" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <figure class="portrait tilt">
+          <img src="./assets/images/juan-vallejo.png" alt="Juan Vallejo" width="1086" height="1448" fetchpriority="high">
+        </figure>
+        <div class="code-card" aria-hidden="true">
+          <div class="code-dots"><i></i><i></i><i></i><span>swipe.ts</span></div>
+<pre><code><span class="k">const</span> tx = <span class="f">executeAtomic</span>([
+  swap(<span class="s">'USDC'</span>, <span class="s">'ETH'</span>, aqua),
+  stake(<span class="s">'stETH'</span>, lido),
+]);
+<span class="c">// 3 transactions → 1 swipe</span></code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="container">
+      <ul class="stats reveal">
+        <li><strong>2024</strong><span>Shipping production backends since</span></li>
+        <li><strong>3 → 1</strong><span>Transactions collapsed in SwipeFi</span></li>
+        <li><strong>2</strong><span>Web3 builds at ETHGlobal &amp; ETH Cali, 2026</span></li>
+        <li><strong>VP</strong><span>IEEE Computer Society USC</span></li>
+      </ul>
+    </section>
+
+    <!-- STACK MARQUEE -->
+    <section class="marquee" aria-label="Tech stack">
+      <div class="marquee-track">
+        <span>Node.js</span><span>TypeScript</span><span>PostgreSQL</span><span>Prisma</span><span>Express</span><span>Python</span><span>Flask</span><span>React</span><span>Next.js</span><span>viem</span><span>ethers.js</span><span>Hardhat</span><span>Docker</span><span>Firebase</span><span>Redis</span><span>AWS S3</span>
+        <span aria-hidden="true">Node.js</span><span aria-hidden="true">TypeScript</span><span aria-hidden="true">PostgreSQL</span><span aria-hidden="true">Prisma</span><span aria-hidden="true">Express</span><span aria-hidden="true">Python</span><span aria-hidden="true">Flask</span><span aria-hidden="true">React</span><span aria-hidden="true">Next.js</span><span aria-hidden="true">viem</span><span aria-hidden="true">ethers.js</span><span aria-hidden="true">Hardhat</span><span aria-hidden="true">Docker</span><span aria-hidden="true">Firebase</span><span aria-hidden="true">Redis</span><span aria-hidden="true">AWS S3</span>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section container">
+      <header class="section-head reveal">
+        <p class="kicker">01 — Selected work</p>
+        <h2>Problems solved, not tech listed.</h2>
+        <p class="section-sub">Three case studies. Each one: the problem, the hard engineering call, and what it delivered.</p>
+      </header>
+
+      <article class="case reveal spot">
+        <div class="case-meta">
+          <span class="case-num">01</span>
+          <span class="badge badge-accent">ETHGlobal · ETHOnline 2026</span>
+        </div>
+        <h3 class="case-title">SwipeFi</h3>
+        <p class="case-lede">Swap and stake in one swipe — a Telegram Mini App on 1inch Aqua + Lido.</p>
+        <dl class="case-grid">
+          <div><dt>Problem</dt><dd>Staking from a stablecoin takes three separate transactions — swap, approve, stake. On mobile, that friction kills conversion.</dd></div>
+          <div><dt>Engineering call</dt><dd>Collapsed it into a single atomic transaction: USDC → ETH through 1inch Aqua liquidity, staked straight into Lido via <code>executeAtomic()</code>, with calldata ABI-encoded in viem against the official <code>@1inch/aqua-sdk</code>.</dd></div>
+          <div><dt>Result</dt><dd>One swipe instead of three transactions, validated end-to-end on a local Ethereum mainnet fork (Hardhat) before touching real funds.</dd></div>
+        </dl>
+        <ul class="tags"><li>Next.js</li><li>viem</li><li>ethers.js</li><li>1inch Aqua</li><li>Lido</li><li>Hardhat</li><li>Telegram Mini App</li></ul>
+        <div class="case-links">
+          <a href="https://github.com/juanvallejo01/SwipeFI" target="_blank" rel="noopener" class="link-arrow">View code</a>
+          <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank" class="link-arrow">ETHGlobal certificate</a>
+        </div>
+      </article>
+
+      <article class="case reveal spot">
+        <div class="case-meta">
+          <span class="case-num">02</span>
+          <span class="badge">Risk engineering · Python</span>
+        </div>
+        <h3 class="case-title">Crypto Agent</h3>
+        <p class="case-lede">An autonomous trading platform designed around failure, not optimism.</p>
+        <dl class="case-grid">
+          <div><dt>Problem</dt><dd>Most trading bots assume orders succeed — and blow up accounts when the exchange says otherwise.</dd></div>
+          <div><dt>Engineering call</dt><dd>Execution reconciliation that never trusts an order until the exchange confirms it, mandatory stop-loss / take-profit, a consecutive-loss circuit breaker and a daily-loss kill switch. API keys are zero-withdrawal and Fernet-encrypted per user.</dd></div>
+          <div><dt>Result</dt><dd>A multi-user Flask platform where every user runs an isolated Binance Spot bot (MA crossover + RSI, gated by a scikit-learn filter) with a live dashboard and Telegram alerts.</dd></div>
+        </dl>
+        <ul class="tags"><li>Python</li><li>CCXT</li><li>scikit-learn</li><li>Flask</li><li>Fernet</li><li>Telegram API</li></ul>
+        <div class="case-links">
+          <a href="https://github.com/juanvallejo01/crypto-agent" target="_blank" rel="noopener" class="link-arrow">View code</a>
+        </div>
+      </article>
+
+      <article class="case reveal spot">
+        <div class="case-meta">
+          <span class="case-num">03</span>
+          <span class="badge">SaaS backend · TechNova</span>
+        </div>
+        <h3 class="case-title">Urbanix</h3>
+        <p class="case-lede">A residential-management SaaS, from paper and chat groups to one platform.</p>
+        <dl class="case-grid">
+          <div><dt>Problem</dt><dd>Residential complexes run visitors, residents, bookings and documents on paper and chat groups — no audit trail, no single source of truth.</dd></div>
+          <div><dt>Engineering call</dt><dd>A modular REST API (Node.js, Express, Prisma) over PostgreSQL with JWT-secured sessions, so each module — visitors, residents, common areas, documents, notifications — evolves independently.</dd></div>
+          <div><dt>Result</dt><dd>A full-stack SaaS (React + Tailwind) covering the day-to-day operations of a residential complex on one consistent data model.</dd></div>
+        </dl>
+        <ul class="tags"><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>JWT</li><li>React</li><li>Tailwind</li></ul>
+        <div class="case-links">
+          <a href="https://github.com/DevCristobalvc/DetectaMugre" target="_blank" rel="noopener" class="link-arrow">View code</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- DEMOS (filled from /api/videos; hidden when empty) -->
+    <section id="demos" class="section container" data-demos hidden>
+      <header class="section-head reveal">
+        <p class="kicker">02 — Demos</p>
+        <h2>See it running.</h2>
+      </header>
+      <ul class="demos" data-demos-list></ul>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section container">
+      <header class="section-head reveal">
+        <p class="kicker">03 — Experience</p>
+        <h2>Where I've shipped.</h2>
+      </header>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="when">Feb 2025 — Present</span>
+          <div>
+            <h3>Backend Developer · <span class="org">CodeLiance</span></h3>
+            <p>Systematizing and automating administrative and document workflows — turning manual processes into reliable backend services.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">Apr — Nov 2024</span>
+          <div>
+            <h3>Backend Developer · <span class="org">TechNova Solutions</span></h3>
+            <p>Designed RESTful APIs with Node.js, Express and Prisma, managed PostgreSQL databases for a residential-management SaaS, automated internal processes with Python and integrated workflows with Google Workspace. Took part in architecture decisions and deployments.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">2026 — Present</span>
+          <div>
+            <h3>Builder · <span class="org">ETH Cali</span></h3>
+            <p>Building on Ethereum at ETHGlobal ETHOnline and the EAG Global Buildathon.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">2025 — 2026</span>
+          <div>
+            <h3>Vice President · <span class="org">IEEE Computer Society USC</span></h3>
+            <p>Led the student chapter at Universidad Santiago de Cali, organizing technical activities for the engineering community.</p>
+          </div>
+        </li>
+        <li class="reveal">
+          <span class="when">2023 — Present</span>
+          <div>
+            <h3>Computer Engineering · <span class="org">Universidad Santiago de Cali</span></h3>
+            <p>Member of the Comba Research and Development Incubator.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PROOF -->
+    <section id="proof" class="section container">
+      <header class="section-head reveal">
+        <p class="kicker">04 — Proof</p>
+        <h2>Verifiable, not decorative.</h2>
+        <p class="section-sub">Every credential links to the original document or its issuer.</p>
+      </header>
+
+      <ul class="proof-grid">
+        <li class="proof reveal spot">
+          <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank">
+            <img src="./assets/certificados/ethonline2026-juan-vallejo-certificate.jpg" alt="ETHGlobal ETHOnline 2026 certificate" loading="lazy">
+            <span class="proof-body"><b>ETHGlobal · ETHOnline 2026</b><small>Built SwipeFi</small></span>
+          </a>
+        </li>
+        <li class="proof reveal spot">
+          <a href="./assets/certificados/ETHCali-certificado-EAGCALI26-Q9ABVFHM.pdf" target="_blank">
+            <img src="./assets/certificados/ETHCali-certificado-EAGCALI26-Q9ABVFHM.jpg" alt="ETH Cali Builder certificate" loading="lazy">
+            <span class="proof-body"><b>ETH Cali Builder</b><small>EAG Global Buildathon 2026</small></span>
+          </a>
+        </li>
+        <li class="proof reveal spot">
+          <a href="https://www.credly.com/badges/6f6f03eb-dad7-426d-91ee-12c24cbf2872" target="_blank" rel="noopener">
+            <img src="./assets/certificados/cert_1.jpeg" alt="Cisco Ethical Hacker badge" loading="lazy" class="contain">
+            <span class="proof-body"><b>Ethical Hacker</b><small>Cisco · verified on Credly</small></span>
+          </a>
+        </li>
+        <li class="proof reveal spot">
+          <a href="https://www.credly.com/badges/a1cdb89c-cd3f-4c78-a55b-f3ff9e55f054" target="_blank" rel="noopener">
+            <img src="./assets/certificados/cert_2.jpeg" alt="Cisco Introduction to Cybersecurity badge" loading="lazy" class="contain">
+            <span class="proof-body"><b>Introduction to Cybersecurity</b><small>Cisco · verified on Credly</small></span>
+          </a>
+        </li>
+      </ul>
+
+      <details class="more-certs reveal">
+        <summary>More certifications</summary>
+        <ul>
+          <li><a href="./assets/certificados/9226003172985CC1108561814C.pdf" target="_blank">SENA certificate</a></li>
+          <li><a href="./assets/certificados/diplomaPython.pdf" target="_blank">Python diploma</a></li>
+          <li><a href="./assets/certificados/diplomaC%23.pdf" target="_blank">C# diploma</a></li>
+          <li><a href="./assets/certificados/Certificado_Excel_Intermedio.pdf" target="_blank">Excel — Intermediate</a></li>
+          <li><a href="./assets/certificados/Aplicacin_de_hoja_de_clculo_Excel_inters_simple_inters_compuesto.pdf" target="_blank">Excel — Simple &amp; compound interest</a></li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container">
+      <div class="cta reveal">
+        <p class="kicker">05 — Contact</p>
+        <h2>Have a backend or Web3 problem that can't fail?<br><span class="grad">Let's talk.</span></h2>
+        <p class="section-sub">Open to remote full-stack, backend and Web3 roles. English B2 · overlaps US business hours.</p>
+        <div class="cta-actions">
+          <button class="btn btn-primary btn-lg" type="button" data-copy="juan.c.vallejo01@gmail.com">
+            <span data-copy-label>juan.c.vallejo01@gmail.com</span>
+            <span class="copy-hint" aria-hidden="true">Copy</span>
+          </button>
+          <a class="btn btn-ghost btn-lg" href="mailto:juan.c.vallejo01@gmail.com?subject=Opportunity%20for%20Juan%20Vallejo">Send email</a>
+        </div>
+        <ul class="socials center">
+          <li><a href="https://www.linkedin.com/in/juan-vallejo-4587962a6/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/juanvallejo01" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://wa.me/573150485151" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </section>
   </main>
 
+  <footer class="footer container">
+    <span>© <span data-year>2026</span> Juan Vallejo</span>
+    <span class="mono">Built by hand · no template</span>
+  </footer>
 
-
-
-
-
-  <!--
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
-  <script src="./assets/js/warp.js"></script>
-  <script src="./assets/js/contact.js"></script>
-  <script type="module" src="./assets/js/videos.js"></script>
-
-  <!--
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+  <script src="./assets/js/v2.js" defer></script>
 </body>
-
 </html>
