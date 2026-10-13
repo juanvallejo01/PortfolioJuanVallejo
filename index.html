@@ -60,12 +60,15 @@
         <span class="brand-name">Juan Vallejo</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#proof">Proof</a>
-        <a href="#contact">Contact</a>
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#experience" data-i18n="nav.exp">Experience</a>
+        <a href="#proof" data-i18n="nav.proof">Proof</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn-sm btn-primary nav-cta">Let's talk</a>
+      <div class="nav-actions">
+        <button class="lang-toggle" type="button" data-lang-toggle aria-label="Cambiar a español"><span data-lang="en">EN</span><span data-lang="es">ES</span></button>
+        <a href="#contact" class="btn btn-sm btn-primary nav-cta" data-i18n="nav.cta">Let's talk</a>
+      </div>
     </div>
   </header>
 
@@ -74,17 +77,17 @@
     <!-- HERO -->
     <section class="hero container">
       <div class="hero-copy">
-        <p class="eyebrow reveal"><span class="pulse"></span> Available for remote work · UTC−5</p>
-        <h1 class="hero-title reveal">
+        <p class="eyebrow reveal" data-i18n="hero.eyebrow"><span class="pulse"></span> Available for remote work · UTC−5</p>
+        <h1 class="hero-title reveal" data-i18n="hero.title">
           I engineer backends and on-chain systems
           <span class="grad">that don't break.</span>
         </h1>
-        <p class="hero-sub reveal">
+        <p class="hero-sub reveal" data-i18n="hero.sub">
           Backend &amp; Web3 engineer. I ship production APIs with <b>Node.js, Prisma and PostgreSQL</b>, and atomic DeFi flows with <b>1inch Aqua, Lido and viem</b> — built for the moment something fails, not just the happy path.
         </p>
         <div class="hero-ctas reveal">
-          <a href="#work" class="btn btn-primary">See case studies <span aria-hidden="true">→</span></a>
-          <a href="./assets/Juan_Vallejo_CV.pdf" target="_blank" class="btn btn-ghost">Download CV</a>
+          <a href="#work" class="btn btn-primary" data-i18n="hero.cta1">See case studies <span aria-hidden="true">→</span></a>
+          <a href="./assets/Juan_Vallejo_CV.pdf" target="_blank" class="btn btn-ghost" data-i18n="hero.cta2">Download CV</a>
         </div>
         <ul class="socials reveal" aria-label="Profiles">
           <li><a href="https://github.com/juanvallejo01" target="_blank" rel="noopener">GitHub</a></li>
@@ -111,9 +114,9 @@
     <!-- STATS -->
     <section class="container">
       <ul class="stats reveal">
-        <li><strong>2024</strong><span>Shipping production backends since</span></li>
-        <li><strong>3 → 1</strong><span>Transactions collapsed in SwipeFi</span></li>
-        <li><strong>2</strong><span>Web3 builds at ETHGlobal &amp; ETH Cali, 2026</span></li>
+        <li><strong>2024</strong><span data-i18n="stat1">Shipping production backends since</span></li>
+        <li><strong>3 → 1</strong><span data-i18n="stat2">Transactions collapsed in SwipeFi</span></li>
+        <li><strong>2</strong><span data-i18n="stat3">Web3 builds at ETHGlobal &amp; ETH Cali, 2026</span></li>
         <li><strong>VP</strong><span>IEEE Computer Society USC</span></li>
       </ul>
     </section>
@@ -129,9 +132,9 @@
     <!-- WORK -->
     <section id="work" class="section container">
       <header class="section-head reveal">
-        <p class="kicker">01 — Selected work</p>
-        <h2>Problems solved, not tech listed.</h2>
-        <p class="section-sub">Three case studies. Each one: the problem, the hard engineering call, and what it delivered.</p>
+        <p class="kicker" data-i18n="work.kicker">01 — Selected work</p>
+        <h2 data-i18n="work.title">Problems solved, not tech listed.</h2>
+        <p class="section-sub" data-i18n="work.sub">Three case studies. Each one: the problem, the hard engineering call, and what it delivered.</p>
       </header>
 
       <article class="case reveal spot">
@@ -140,52 +143,52 @@
           <span class="badge badge-accent">ETHGlobal · ETHOnline 2026</span>
         </div>
         <h3 class="case-title">SwipeFi</h3>
-        <p class="case-lede">Swap and stake in one swipe — a Telegram Mini App on 1inch Aqua + Lido.</p>
+        <p class="case-lede" data-i18n="sw.lede">Swap and stake in one swipe — a Telegram Mini App on 1inch Aqua + Lido.</p>
         <dl class="case-grid">
-          <div><dt>Problem</dt><dd>Staking from a stablecoin takes three separate transactions — swap, approve, stake. On mobile, that friction kills conversion.</dd></div>
-          <div><dt>Engineering call</dt><dd>Collapsed it into a single atomic transaction: USDC → ETH through 1inch Aqua liquidity, staked straight into Lido via <code>executeAtomic()</code>, with calldata ABI-encoded in viem against the official <code>@1inch/aqua-sdk</code>.</dd></div>
-          <div><dt>Result</dt><dd>One swipe instead of three transactions, validated end-to-end on a local Ethereum mainnet fork (Hardhat) before touching real funds.</dd></div>
+          <div><dt data-i18n="case.p">Problem</dt><dd data-i18n="sw.p">Staking from a stablecoin takes three separate transactions — swap, approve, stake. On mobile, that friction kills conversion.</dd></div>
+          <div><dt data-i18n="case.d">Engineering call</dt><dd data-i18n="sw.d">Collapsed it into a single atomic transaction: USDC → ETH through 1inch Aqua liquidity, staked straight into Lido via <code>executeAtomic()</code>, with calldata ABI-encoded in viem against the official <code>@1inch/aqua-sdk</code>.</dd></div>
+          <div><dt data-i18n="case.r">Result</dt><dd data-i18n="sw.r">One swipe instead of three transactions, validated end-to-end on a local Ethereum mainnet fork (Hardhat) before touching real funds.</dd></div>
         </dl>
         <ul class="tags"><li>Next.js</li><li>viem</li><li>ethers.js</li><li>1inch Aqua</li><li>Lido</li><li>Hardhat</li><li>Telegram Mini App</li></ul>
         <div class="case-links">
-          <a href="https://github.com/juanvallejo01/SwipeFI" target="_blank" rel="noopener" class="link-arrow">View code</a>
-          <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank" class="link-arrow">ETHGlobal certificate</a>
+          <a href="https://github.com/juanvallejo01/SwipeFI" target="_blank" rel="noopener" class="link-arrow" data-i18n="case.code">View code</a>
+          <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank" class="link-arrow" data-i18n="sw.cert">ETHGlobal certificate</a>
         </div>
       </article>
 
       <article class="case reveal spot">
         <div class="case-meta">
           <span class="case-num">02</span>
-          <span class="badge">Risk engineering · Python</span>
+          <span class="badge" data-i18n="ca.badge">Risk engineering · Python</span>
         </div>
         <h3 class="case-title">Crypto Agent</h3>
-        <p class="case-lede">An autonomous trading platform designed around failure, not optimism.</p>
+        <p class="case-lede" data-i18n="ca.lede">An autonomous trading platform designed around failure, not optimism.</p>
         <dl class="case-grid">
-          <div><dt>Problem</dt><dd>Most trading bots assume orders succeed — and blow up accounts when the exchange says otherwise.</dd></div>
-          <div><dt>Engineering call</dt><dd>Execution reconciliation that never trusts an order until the exchange confirms it, mandatory stop-loss / take-profit, a consecutive-loss circuit breaker and a daily-loss kill switch. API keys are zero-withdrawal and Fernet-encrypted per user.</dd></div>
-          <div><dt>Result</dt><dd>A multi-user Flask platform where every user runs an isolated Binance Spot bot (MA crossover + RSI, gated by a scikit-learn filter) with a live dashboard and Telegram alerts.</dd></div>
+          <div><dt data-i18n="case.p">Problem</dt><dd data-i18n="ca.p">Most trading bots assume orders succeed — and blow up accounts when the exchange says otherwise.</dd></div>
+          <div><dt data-i18n="case.d">Engineering call</dt><dd data-i18n="ca.d">Execution reconciliation that never trusts an order until the exchange confirms it, mandatory stop-loss / take-profit, a consecutive-loss circuit breaker and a daily-loss kill switch. API keys are zero-withdrawal and Fernet-encrypted per user.</dd></div>
+          <div><dt data-i18n="case.r">Result</dt><dd data-i18n="ca.r">A multi-user Flask platform where every user runs an isolated Binance Spot bot (MA crossover + RSI, gated by a scikit-learn filter) with a live dashboard and Telegram alerts.</dd></div>
         </dl>
         <ul class="tags"><li>Python</li><li>CCXT</li><li>scikit-learn</li><li>Flask</li><li>Fernet</li><li>Telegram API</li></ul>
         <div class="case-links">
-          <a href="https://github.com/juanvallejo01/crypto-agent" target="_blank" rel="noopener" class="link-arrow">View code</a>
+          <a href="https://github.com/juanvallejo01/crypto-agent" target="_blank" rel="noopener" class="link-arrow" data-i18n="case.code">View code</a>
         </div>
       </article>
 
       <article class="case reveal spot">
         <div class="case-meta">
           <span class="case-num">03</span>
-          <span class="badge">SaaS backend · TechNova</span>
+          <span class="badge" data-i18n="ur.badge">SaaS backend · TechNova</span>
         </div>
         <h3 class="case-title">Urbanix</h3>
-        <p class="case-lede">A residential-management SaaS, from paper and chat groups to one platform.</p>
+        <p class="case-lede" data-i18n="ur.lede">A residential-management SaaS, from paper and chat groups to one platform.</p>
         <dl class="case-grid">
-          <div><dt>Problem</dt><dd>Residential complexes run visitors, residents, bookings and documents on paper and chat groups — no audit trail, no single source of truth.</dd></div>
-          <div><dt>Engineering call</dt><dd>A modular REST API (Node.js, Express, Prisma) over PostgreSQL with JWT-secured sessions, so each module — visitors, residents, common areas, documents, notifications — evolves independently.</dd></div>
-          <div><dt>Result</dt><dd>A full-stack SaaS (React + Tailwind) covering the day-to-day operations of a residential complex on one consistent data model.</dd></div>
+          <div><dt data-i18n="case.p">Problem</dt><dd data-i18n="ur.p">Residential complexes run visitors, residents, bookings and documents on paper and chat groups — no audit trail, no single source of truth.</dd></div>
+          <div><dt data-i18n="case.d">Engineering call</dt><dd data-i18n="ur.d">A modular REST API (Node.js, Express, Prisma) over PostgreSQL with JWT-secured sessions, so each module — visitors, residents, common areas, documents, notifications — evolves independently.</dd></div>
+          <div><dt data-i18n="case.r">Result</dt><dd data-i18n="ur.r">A full-stack SaaS (React + Tailwind) covering the day-to-day operations of a residential complex on one consistent data model.</dd></div>
         </dl>
         <ul class="tags"><li>Node.js</li><li>Express</li><li>Prisma</li><li>PostgreSQL</li><li>JWT</li><li>React</li><li>Tailwind</li></ul>
         <div class="case-links">
-          <a href="https://github.com/DevCristobalvc/DetectaMugre" target="_blank" rel="noopener" class="link-arrow">View code</a>
+          <a href="https://github.com/DevCristobalvc/DetectaMugre" target="_blank" rel="noopener" class="link-arrow" data-i18n="case.code">View code</a>
         </div>
       </article>
     </section>
@@ -193,8 +196,8 @@
     <!-- DEMOS (filled from /api/videos; hidden when empty) -->
     <section id="demos" class="section container" data-demos hidden>
       <header class="section-head reveal">
-        <p class="kicker">02 — Demos</p>
-        <h2>See it running.</h2>
+        <p class="kicker" data-i18n="demos.kicker">02 — Demos</p>
+        <h2 data-i18n="demos.title">See it running.</h2>
       </header>
       <ul class="demos" data-demos-list></ul>
     </section>
@@ -202,44 +205,44 @@
     <!-- EXPERIENCE -->
     <section id="experience" class="section container">
       <header class="section-head reveal">
-        <p class="kicker">03 — Experience</p>
-        <h2>Where I've shipped.</h2>
+        <p class="kicker" data-i18n="exp.kicker">03 — Experience</p>
+        <h2 data-i18n="exp.title">Where I've shipped.</h2>
       </header>
 
       <ol class="timeline">
         <li class="reveal">
-          <span class="when">Feb 2025 — Present</span>
+          <span class="when" data-i18n="exp.w1">Feb 2025 — Present</span>
           <div>
             <h3>Backend Developer · <span class="org">CodeLiance</span></h3>
-            <p>Systematizing and automating administrative and document workflows — turning manual processes into reliable backend services.</p>
+            <p data-i18n="exp.d1">Systematizing and automating administrative and document workflows — turning manual processes into reliable backend services.</p>
           </div>
         </li>
         <li class="reveal">
-          <span class="when">Apr — Nov 2024</span>
+          <span class="when" data-i18n="exp.w2">Apr — Nov 2024</span>
           <div>
             <h3>Backend Developer · <span class="org">TechNova Solutions</span></h3>
-            <p>Designed RESTful APIs with Node.js, Express and Prisma, managed PostgreSQL databases for a residential-management SaaS, automated internal processes with Python and integrated workflows with Google Workspace. Took part in architecture decisions and deployments.</p>
+            <p data-i18n="exp.d2">Designed RESTful APIs with Node.js, Express and Prisma, managed PostgreSQL databases for a residential-management SaaS, automated internal processes with Python and integrated workflows with Google Workspace. Took part in architecture decisions and deployments.</p>
           </div>
         </li>
         <li class="reveal">
-          <span class="when">2026 — Present</span>
+          <span class="when" data-i18n="exp.w3">2026 — Present</span>
           <div>
             <h3>Builder · <span class="org">ETH Cali</span></h3>
-            <p>Building on Ethereum at ETHGlobal ETHOnline and the EAG Global Buildathon.</p>
+            <p data-i18n="exp.d3">Building on Ethereum at ETHGlobal ETHOnline and the EAG Global Buildathon.</p>
           </div>
         </li>
         <li class="reveal">
           <span class="when">2025 — 2026</span>
           <div>
-            <h3>Vice President · <span class="org">IEEE Computer Society USC</span></h3>
-            <p>Led the student chapter at Universidad Santiago de Cali, organizing technical activities for the engineering community.</p>
+            <h3 data-i18n="exp.t4">Vice President · <span class="org">IEEE Computer Society USC</span></h3>
+            <p data-i18n="exp.d4">Led the student chapter at Universidad Santiago de Cali, organizing technical activities for the engineering community.</p>
           </div>
         </li>
         <li class="reveal">
-          <span class="when">2023 — Present</span>
+          <span class="when" data-i18n="exp.w5">2023 — Present</span>
           <div>
-            <h3>Computer Engineering · <span class="org">Universidad Santiago de Cali</span></h3>
-            <p>Member of the Comba Research and Development Incubator.</p>
+            <h3 data-i18n="exp.t5">Computer Engineering · <span class="org">Universidad Santiago de Cali</span></h3>
+            <p data-i18n="exp.d5">Member of the Comba Research and Development Incubator.</p>
           </div>
         </li>
       </ol>
@@ -248,16 +251,16 @@
     <!-- PROOF -->
     <section id="proof" class="section container">
       <header class="section-head reveal">
-        <p class="kicker">04 — Proof</p>
-        <h2>Verifiable, not decorative.</h2>
-        <p class="section-sub">Every credential links to the original document or its issuer.</p>
+        <p class="kicker" data-i18n="proof.kicker">04 — Proof</p>
+        <h2 data-i18n="proof.title">Verifiable, not decorative.</h2>
+        <p class="section-sub" data-i18n="proof.sub">Every credential links to the original document or its issuer.</p>
       </header>
 
       <ul class="proof-grid">
         <li class="proof reveal spot">
           <a href="./assets/certificados/ethonline2026-juan-vallejo-certificate.pdf" target="_blank">
             <img src="./assets/certificados/ethonline2026-juan-vallejo-certificate.jpg" alt="ETHGlobal ETHOnline 2026 certificate" loading="lazy">
-            <span class="proof-body"><b>ETHGlobal · ETHOnline 2026</b><small>Built SwipeFi</small></span>
+            <span class="proof-body"><b>ETHGlobal · ETHOnline 2026</b><small data-i18n="proof.eth">Built SwipeFi</small></span>
           </a>
         </li>
         <li class="proof reveal spot">
@@ -269,25 +272,25 @@
         <li class="proof reveal spot">
           <a href="https://www.credly.com/badges/6f6f03eb-dad7-426d-91ee-12c24cbf2872" target="_blank" rel="noopener">
             <img src="./assets/certificados/cert_1.jpeg" alt="Cisco Ethical Hacker badge" loading="lazy" class="contain">
-            <span class="proof-body"><b>Ethical Hacker</b><small>Cisco · verified on Credly</small></span>
+            <span class="proof-body"><b>Ethical Hacker</b><small data-i18n="proof.cisco">Cisco · verified on Credly</small></span>
           </a>
         </li>
         <li class="proof reveal spot">
           <a href="https://www.credly.com/badges/a1cdb89c-cd3f-4c78-a55b-f3ff9e55f054" target="_blank" rel="noopener">
             <img src="./assets/certificados/cert_2.jpeg" alt="Cisco Introduction to Cybersecurity badge" loading="lazy" class="contain">
-            <span class="proof-body"><b>Introduction to Cybersecurity</b><small>Cisco · verified on Credly</small></span>
+            <span class="proof-body"><b data-i18n="proof.intro">Introduction to Cybersecurity</b><small data-i18n="proof.cisco">Cisco · verified on Credly</small></span>
           </a>
         </li>
       </ul>
 
       <details class="more-certs reveal">
-        <summary>More certifications</summary>
+        <summary data-i18n="proof.more">More certifications</summary>
         <ul>
-          <li><a href="./assets/certificados/9226003172985CC1108561814C.pdf" target="_blank">SENA certificate</a></li>
-          <li><a href="./assets/certificados/diplomaPython.pdf" target="_blank">Python diploma</a></li>
-          <li><a href="./assets/certificados/diplomaC%23.pdf" target="_blank">C# diploma</a></li>
-          <li><a href="./assets/certificados/Certificado_Excel_Intermedio.pdf" target="_blank">Excel — Intermediate</a></li>
-          <li><a href="./assets/certificados/Aplicacin_de_hoja_de_clculo_Excel_inters_simple_inters_compuesto.pdf" target="_blank">Excel — Simple &amp; compound interest</a></li>
+          <li><a href="./assets/certificados/9226003172985CC1108561814C.pdf" target="_blank" data-i18n="c.sena">SENA certificate</a></li>
+          <li><a href="./assets/certificados/diplomaPython.pdf" target="_blank" data-i18n="c.py">Python diploma</a></li>
+          <li><a href="./assets/certificados/diplomaC%23.pdf" target="_blank" data-i18n="c.cs">C# diploma</a></li>
+          <li><a href="./assets/certificados/Certificado_Excel_Intermedio.pdf" target="_blank" data-i18n="c.x1">Excel — Intermediate</a></li>
+          <li><a href="./assets/certificados/Aplicacin_de_hoja_de_clculo_Excel_inters_simple_inters_compuesto.pdf" target="_blank" data-i18n="c.x2">Excel — Simple &amp; compound interest</a></li>
         </ul>
       </details>
     </section>
@@ -295,15 +298,15 @@
     <!-- CONTACT -->
     <section id="contact" class="section container">
       <div class="cta reveal">
-        <p class="kicker">05 — Contact</p>
-        <h2>Have a backend or Web3 problem that can't fail?<br><span class="grad">Let's talk.</span></h2>
-        <p class="section-sub">Open to remote full-stack, backend and Web3 roles. English B2 · overlaps US business hours.</p>
+        <p class="kicker" data-i18n="ct.kicker">05 — Contact</p>
+        <h2 data-i18n="ct.title">Have a backend or Web3 problem that can't fail?<br><span class="grad">Let's talk.</span></h2>
+        <p class="section-sub" data-i18n="ct.sub">Open to remote full-stack, backend and Web3 roles. English B2 · overlaps US business hours.</p>
         <div class="cta-actions">
           <button class="btn btn-primary btn-lg" type="button" data-copy="juan.c.vallejo01@gmail.com">
             <span data-copy-label>juan.c.vallejo01@gmail.com</span>
-            <span class="copy-hint" aria-hidden="true">Copy</span>
+            <span class="copy-hint" aria-hidden="true" data-i18n="ct.copy">Copy</span>
           </button>
-          <a class="btn btn-ghost btn-lg" href="mailto:juan.c.vallejo01@gmail.com?subject=Opportunity%20for%20Juan%20Vallejo">Send email</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:juan.c.vallejo01@gmail.com?subject=Opportunity%20for%20Juan%20Vallejo" data-i18n="ct.send">Send email</a>
         </div>
         <ul class="socials center">
           <li><a href="https://www.linkedin.com/in/juan-vallejo-4587962a6/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -316,9 +319,10 @@
 
   <footer class="footer container">
     <span>© <span data-year>2026</span> Juan Vallejo</span>
-    <span class="mono">Built by hand · no template</span>
+    <span class="mono" data-i18n="foot">Built by hand · no template</span>
   </footer>
 
+  <script src="./assets/js/i18n.js" defer></script>
   <script src="./assets/js/v2.js" defer></script>
 </body>
 </html>

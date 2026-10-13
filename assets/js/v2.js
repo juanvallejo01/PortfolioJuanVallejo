@@ -59,12 +59,12 @@ if (copyBtn) {
     const email = copyBtn.dataset.copy;
     try {
       await navigator.clipboard.writeText(email);
-      hint.textContent = 'Copied ✓';
+      hint.textContent = document.documentElement.lang === 'es' ? 'Copiado ✓' : 'Copied ✓';
     } catch {
       window.location.href = `mailto:${email}`;
       return;
     }
-    setTimeout(() => { hint.textContent = 'Copy'; }, 1800);
+    setTimeout(() => { hint.textContent = document.documentElement.lang === 'es' ? 'Copiar' : 'Copy'; }, 1800);
   });
 }
 
